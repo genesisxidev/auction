@@ -1,0 +1,4 @@
+node_modules
+./blockend/node_modules
+.DS_Store
+./blockend/.DS_Store

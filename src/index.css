@@ -1,0 +1,295 @@
+@import url("https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+@font-face {
+  font-family: "alte_haas_grotesk";
+  src: url("./assets/font/AlteHaasGroteskRegular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+.dela-gothic-one {
+  font-family: "Dela Gothic One", serif;
+
+  font-style: normal;
+}
+
+body {
+  background-color: black;
+  font-family: "alte_haas_grotesk";
+}
+.hidden-scrollbar {
+  overflow-y: auto; /* Enable vertical scrolling */
+  -ms-overflow-style: none; /* For Internet Explorer and Edge */
+  scrollbar-width: none; /* For Firefox */
+}
+.capital-first-letter::first-letter{
+  text-transform: capitalize;
+}
+
+.hidden-scrollbar::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Opera */
+}
+
+/* Custom Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4a4a4a;
+  border-radius: 4px;
+  transition:  0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #666666;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #4a4a4a #1a1a1a;
+}
+
+.hidden-scrollbar {
+  overflow-y: auto; /* Enable vertical scrolling */
+  -ms-overflow-style: none; /* For Internet Explorer and Edge */
+  scrollbar-width: none; /* For Firefox */
+}
+
+
+@layer utilities {
+  .page-container {
+    @apply relative lg:min-h-[650px] lg:pb-5 pb-[114px] h-full flex;
+  }
+  .f-col {
+    @apply flex flex-col;
+  }
+  .container {
+    @apply max-w-[90rem] mx-auto w-full xl:px-0 px-2;
+  }
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+  .center-items {
+    @apply flex items-center;
+  }
+  .sm-text {
+    @apply md:text-sm text-xs;
+  }
+  .xl-text {
+    @apply xl:text-xl lg:text-lg md:text-base text-sm;
+  }
+  .lg-text {
+    @apply lg:text-lg md:text-base text-sm;
+  }
+  .base-text {
+    @apply lg:text-base md:text-sm text-xs;
+  }
+  .bold {
+    @apply md:font-bold font-semibold ;
+  }
+  .no-outline {
+    @apply outline-none focus:border-none focus:ring-0;
+  }
+  .connect-btn {
+    @apply lg:w-[189px] lg:h-[36px] md:w-[150px] md:h-[30px] w-[120px] h-[24px] rounded-full bg-transparent border border-white base-text bold text-center text-white uppercase flex-center cursor-pointer hover:bg-gray-800 transition-colors duration-200;
+  }
+  /* landing page */
+  .landing-auction-box {
+    @apply max-w-[865px] w-full mx-auto lg:h-[68px] md:h-[50px] h-[40px] rounded-[5px] bg-[#121212]/[0.76]  flex-center cursor-pointer hover:bg-[#121212]/[0.80] transition-colors duration-200;
+  }
+  .landing-auction-box-text {
+    @apply xl-text bold text-center font-alte-haas-grotesk capitalize;
+  }
+
+  /* footer */
+  .footer-table-heading-text {
+    @apply lg-text font-dela-gothic-one uppercase md:text-center text-left;
+  }
+  .footer-table-text-white {
+    @apply text-white footer-table-heading-text;
+  }
+  .footer-table-text-light-blue {
+    @apply text-light-blue footer-table-heading-text;
+  }
+  .footer-table-body-row-padding {
+    @apply lg:py-[10px] md:py-[9px] py-[8px];
+  }
+  .footer-table-gap {
+    @apply f-col lg:gap-[20px] md:gap-[15px] gap-[10px];
+  }
+  .footer-table-col-container {
+    @apply footer-table-gap w-full md:pb-0 pb-7;
+  }
+  .footer-table-body {
+    @apply footer-table-gap md:border-r md:border-white  w-full h-full;
+  }
+  .footer-table-header-cell {
+    @apply footer-table-text-white w-full;
+  }
+  .footer-table-body-cell {
+    @apply w-full h-full flex-center;
+  }
+  .btn {
+    @apply lg:w-[151px] md:w-[140px] w-[120px] lg:h-[53px] h-[45px]  text-black lg-text bold lg:rounded-[5px] md:rounded-[4px] rounded-[3px] font-alte-haas-grotesk inline-block  outline-none border-none;
+  }
+  .form-label-text{
+    @apply text-white font-alte-haas-grotesk lg-text bold capital-first-letter
+  }
+  .modal-backdrop {
+    @apply fixed inset-0 top-0 flex justify-center items-center bg-black/30 hidden-scrollbar  backdrop-blur-sm;
+  }
+
+  .modal-container {
+    @apply  rounded-lg w-full m-auto ;
+  }
+
+  .modal-header {
+    @apply text-center relative;
+  }
+
+  .modal-title {
+    @apply text-white text-xl font-bold;
+  }
+
+  .modal-close {
+    @apply text-white text-2xl hover:opacity-75 cursor-pointer;
+  }
+
+  .modal-body {
+    @apply text-center lg:pt-[10px] md:pt-[12px] pt-[14px] f-col lg:gap-[10px] md:gap-[12px] gap-[14px];
+  }
+
+  .bid-input {
+    @apply w-full bg-[#2A2A2A] text-white text-2xl text-center py-2 rounded-md;
+  }
+
+  .bid-text {
+    @apply text-white text-lg;
+  }
+
+  .bid-amount {
+    @apply text-[#45D483]; /* Green color for the minimum bid amount */
+  }
+
+  .place-bid-button {
+    @apply w-full bg-[#45D483] text-black bold py-3 rounded-md 
+    hover:bg-[#3bc574] transition-colors duration-200;
+  }
+
+  .wallet-connect-btn {
+    @apply mt-4 max-w-[200px] w-full !px-4 !py-2 mx-auto h-[50px] rounded-full bg-[#39b613] lg-text bold font-alte-haas-grotesk text-white uppercase flex-center cursor-pointer btn-text-shadow;
+  }
+  .place-bid-btn {
+    @apply lg:w-[232px] md:w-[180px] lg:px-0 px-4 py-2  mx-auto   rounded-[35px] bg-[#39b613] lg-text bold font-alte-haas-grotesk text-white uppercase flex-center cursor-pointer btn-text-shadow;
+  }
+}
+
+/* Add this CSS to your existing styles */
+.element {
+  @apply w-full h-full bg-[#3fc6af] blur-[106.9px];
+}
+
+.text-shadow {
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 55%);
+}
+
+.btn-text-shadow {
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 25%);
+}
+
+.slide-down-big-in {
+  animation: slide-down-big-in 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes slide-down-big-in {
+  0% {
+    transform: translateY(-10%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* src/index.css */
+
+/* 404 Page Styles */
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Add a button to go back to the homepage */
+.back-home-btn {
+  @apply mt-4 px-6 py-2 bg-white text-black rounded-full font-medium text-sm uppercase tracking-wider hover:bg-gray-200 transition-colors duration-300;
+}
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.timer {
+  animation: blink 1s linear infinite;
+  color: #fff; /* Example color, adjust as needed */
+  text-align: center;
+  font-family: "Dela Gothic One", sans-serif;
+  letter-spacing: 0.4rem;
+}
+
+.skeleton-loader {
+  background-color: #e0e0e0; /* Light gray background */
+  animation: pulse 1.5s infinite; /* Pulsing animation */
+}
+
+@keyframes pulse {
+  0% {
+    background-color: #323232;
+  }
+  50% {
+    background-color: #404040; /* Slightly lighter gray */
+  }
+  100% {
+    background-color: #323232;
+  }
+}
