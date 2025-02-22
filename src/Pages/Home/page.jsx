@@ -20,7 +20,7 @@ const HomePage = () => {
             <p class="lg:text-[28px] text-[24px] bold text-center text-white text-shadow font-alte-haas-grotesk">
               <span>Welcome to the</span>
               <br />
-              <span>LAO Genesis Transformation Auctions</span>
+              <span>Genesis XI Auction</span>
             </p>
             <div className="f-col w-full lg:gap-[23px] md:gap-[15px] gap-[10px]">
               {/* <Link to="/auction" className="landing-auction-box">
@@ -42,7 +42,7 @@ const HomePage = () => {
                     View Upcoming Auctions
                   </p>
                 }
-                link="/"
+                link="/https://www.lazyapeofficial.com/genesisxi"
               />
               <Landing_btn
                 title={
