@@ -256,7 +256,7 @@ contract NFTAuctionV3 is ERC721A, Ownable, ReentrancyGuard, IERC721Receiver {
 
     function ownerMint(string[] memory uri) public onlyOwner {
         require(readyToMint, "Not ready to mint,auctions in progress");
-        _safeMint(address(this), 10);
+        _safeMint(address(this), 11);
         _setTokenURI(uri);
         readyToMint = false;
     }

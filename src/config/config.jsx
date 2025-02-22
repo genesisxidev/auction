@@ -1,7 +1,7 @@
 import { createAppKit } from "@reown/appkit/react";
 
 import { WagmiProvider } from "wagmi";
-import { sepolia,hardhat,fantomTestnet } from "@reown/appkit/networks";
+import { mainnet } from "@reown/appkit/networks";
 
 import { WagmiAdapter } from "@reown/appkit-adapter-wagmi";
 
@@ -17,7 +17,7 @@ const metadata = {
 };
 
 // 3. Set the networks
-const networks = [fantomTestnet,hardhat];
+const networks = [mainnet];
 
 // 4. Create Wagmi Adapter
 export const wagmiAdapter = new WagmiAdapter({

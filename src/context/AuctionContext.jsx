@@ -17,7 +17,7 @@ import { useAppKit } from "@reown/appkit/react";
 import { ethers } from "ethers";
 const AuctionContext = createContext();
 
-export const contractAddress = "0x9d269FAC9A9CeEb8C662f6a42099C3b8c90f883A";
+export const contractAddress = "0x903f7017e73aedeba3edd271d7c095ee6b47ab35";
 export const AuctionProvider = ({ children }) => {
   const [isAdmin, setIsAdmin] = useState(false);
   const { address, isConnected, chainId } = useAccount();
