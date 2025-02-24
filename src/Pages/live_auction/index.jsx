@@ -29,6 +29,7 @@ function LiveAuction({ isLive }) {
       setLoading(true);
       try {
         const res = await getLiveAuctions();
+        console.log("res", res);
 
         const liveAuctionIds = res
           .filter(
@@ -41,6 +42,7 @@ function LiveAuction({ isLive }) {
         if (liveAuctionIds.length === 0) return;
 
         const uris = await getTokenURI(liveAuctionIds);
+        console.log("uris", uris);
 
         const auctionData = await Promise.all(
           uris.map(async (uri, index) => {
@@ -61,6 +63,8 @@ function LiveAuction({ isLive }) {
         setLoading(false);
       }
     };
+
+    console.log("liveAuctions", liveAuctions);
 
     const fetchUpcomingAndEndedAuctions = async () => {
       setLoading(true);

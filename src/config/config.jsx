@@ -10,8 +10,8 @@ export const projectId = "e9f34e2d173bc2c9f8381920f2279055";
 
 // 2. Create a metadata object - optional
 const metadata = {
-  name: "nft auction",
-  description: "nft auction",
+  name: "Auction NFTs",
+  description: "Auction NFTs",
   url: "https://reown.com/appkit", // origin must match your domain & subdomain
   icons: ["https://assets.reown.com/reown-profile-pic.png"],
 };

@@ -12,7 +12,7 @@ import { formatAddress } from "../../helpers/helper";
 import Timer from "../../Components/Timer/Timer";
 import { watchContractEvent } from "@wagmi/core";
 import { config } from "../../config/config";
-import abi from "../../../blockend/artifacts/contracts/NFTAuctionV3.sol/NFTAuctionV3.json";
+import abi from "../../../blockend/artifacts/contracts/NFTAuctionV4.sol/NFTAuctionV4.json";
 import { ethers } from "ethers";
 import { toast } from "react-toastify";
 import notificationSound from "../../assets/audio/auction_noise.mp3";

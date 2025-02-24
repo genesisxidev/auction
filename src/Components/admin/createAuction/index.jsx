@@ -122,7 +122,8 @@ const CreateAuctionModal = ({ setModal }) => {
       data.tokenId,
       data.endTime,
       data.basePrice,
-      data.interval
+      data.interval,
+      data.nftUri
     );
     console.log("trx", trx);
     if (trx?.status === false) {
@@ -226,6 +227,19 @@ const CreateAuctionModal = ({ setModal }) => {
             {error.basePrice && (
               <p className="text-red text-sm">{error.basePrice}</p>
             )}
+               </div>
+
+               <div className="flex flex-col gap-2">
+            <label className="form-label-text">NFT uri</label>
+            <input
+              type="text"
+              name="nftUri"
+              value={data.nftUri}
+              onChange={onChangeHandler}
+              className="w-full mx-auto h-[50px] rounded-full bg-[#3c3c3c] lg-text font-bold text-center text-white font-alte-haas-grotesk no-outline px-3"
+              placeholder="Enter NFT uri"
+            />
+            {error.nftUri && <p className="text-red text-sm">{error.nftUri}</p>}
           </div>
 
           <div className="flex flex-col gap-2">

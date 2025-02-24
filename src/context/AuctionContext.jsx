@@ -4,7 +4,7 @@ import { formatEther, parseEther } from "viem";
 import { useAccount } from "wagmi";
 
 import { config } from "../config/config";
-import abi from "../../blockend/artifacts/contracts/NFTAuctionV3.sol/NFTAuctionV3.json";
+import abi from "../../blockend/artifacts/contracts/NFTAuctionV4.sol/NFTAuctionV4.json";
 import {
   writeContract,
   simulateContract,
@@ -17,7 +17,7 @@ import { useAppKit } from "@reown/appkit/react";
 import { ethers } from "ethers";
 const AuctionContext = createContext();
 
-export const contractAddress = "0x903f7017e73aedeba3edd271d7c095ee6b47ab35";
+export const contractAddress = "0xD8dECB0Fc3D4cc131681Baf2cFDAf3bBfC634b15";
 export const AuctionProvider = ({ children }) => {
   const [isAdmin, setIsAdmin] = useState(false);
   const { address, isConnected, chainId } = useAccount();
@@ -116,12 +116,13 @@ export const AuctionProvider = ({ children }) => {
       throw error;
     }
   };
-  async function createAuction(tokenId, duration, basePrice, minimumBid) {
+  async function createAuction(tokenId, duration, basePrice, minimumBid, nftUri) {
     const trx = await sendTransaction("createAuction", [
       tokenId,
       Number(duration),
       parseEther(basePrice.toString()),
       parseEther(minimumBid.toString()),
+      nftUri,
     ]);
 
     console.log(trx);
@@ -190,7 +191,7 @@ export const AuctionProvider = ({ children }) => {
     return data;
   }
   async function getTokenURI(tokenId) {
-    const data = await readFromContract("tokenURI", [tokenId]);
+    const data = await readFromContract("multiTokenURI", [tokenId]);
     return data;
   }
   async function getBaseURI() {

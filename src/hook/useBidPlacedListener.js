@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import notificationSound from "../assets/audio/auction_noise.mp3";
 import { ethers, formatEther } from "ethers";
 import useAuction, { contractAddress } from "../context/AuctionContext";
-import abi from "../../blockend/artifacts/contracts/NFTAuctionV3.sol/NFTAuctionV3.json";
+import abi from "../../blockend/artifacts/contracts/NFTAuctionV4.sol/NFTAuctionV4.json";
 import { toast } from "react-toastify";
 import { formatAddress } from "../helpers/helper";
 const provider = new ethers.JsonRpcProvider(
